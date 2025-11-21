@@ -70,7 +70,7 @@ export function AdminSidebar() {
       </nav>
 
       <div className="p-4 border-t border-slate-700 text-xs text-slate-400">
-        <p>Education Management System v1.0</p>
+        <p>Education Management System</p>
       </div>
     </aside>
   )
