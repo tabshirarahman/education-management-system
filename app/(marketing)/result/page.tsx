@@ -1,14 +1,11 @@
 "use client";
-
 import type React from "react";
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search, AlertCircle } from "lucide-react";
-import Link from "next/link";
 
 interface StudentResult {
   _id: string;
@@ -91,7 +88,6 @@ export default function Result() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 to-slate-800">
-      
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-2">
@@ -200,7 +196,7 @@ export default function Result() {
                 Subject-wise Performance
               </h2>
               <div className="space-y-4">
-                {result.subjectMarks.map((sm, index) => (
+                {result && result.subjectMarks.map((sm, index) => (
                   <div
                     key={index}
                     className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"

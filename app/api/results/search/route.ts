@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 import dbConnect from "@/lib/db/connect"
 import Result from "@/models/Result"
 import Student from "@/models/Student"
+import "@/models/Subject";
 import type { ApiResponse, IResult } from "@/types"
 
 export async function POST(request: NextRequest) {
