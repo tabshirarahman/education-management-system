@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
               <span className="font-bold text-lg text-white">EMS</span>
             </div>
-            <p className="text-sm">Education Management System</p>
+            <p className="text-sm">University Result Management System</p>
           </div>
 
           {/* Quick Links */}
@@ -57,7 +57,7 @@ export default function Footer() {
                   href="/login"
                   className="hover:text-blue-400 transition-colors"
                 >
-                   Results
+                  Results
                 </Link>
               </li>
               <li>
@@ -111,7 +111,8 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-slate-400">
-            &copy; 2025 Education Management System. All rights reserved.
+            &copy; 2025 University Result Management System. All rights
+            reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0 text-sm">
             <Link href="#" className="hover:text-blue-400 transition-colors">

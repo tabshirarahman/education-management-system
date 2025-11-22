@@ -1,15 +1,15 @@
-import type React from "react"
-import { AdminLayout } from "@/components/admin/layout"
+import type React from "react";
+import { AdminLayout } from "@/components/admin/layout";
 
 export const metadata = {
   title: "Admin Dashboard - EMS",
-  description: "Education Management System Admin Panel",
-}
+  description: "University Result Management System Admin Panel",
+};
 
 export default function AdminRootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <AdminLayout>{children}</AdminLayout>
+  return <AdminLayout>{children}</AdminLayout>;
 }

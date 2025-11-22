@@ -91,7 +91,7 @@ export default function Result() {
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-2">
-            Education Management System
+            University Result Management System
           </h1>
           <p className="text-slate-400">Search for your academic results</p>
         </div>
@@ -196,36 +196,37 @@ export default function Result() {
                 Subject-wise Performance
               </h2>
               <div className="space-y-4">
-                {result && result.subjectMarks.map((sm, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"
-                  >
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-slate-900">
-                        {sm.subject.subjectName}
-                      </h3>
-                      <p className="text-sm text-slate-600">
-                        {sm.subject.subjectCode}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-8">
-                      <div className="text-center">
-                        <p className="text-xs text-slate-600 mb-1">Marks</p>
-                        <p className="text-xl font-bold text-slate-900">
-                          {sm.marks}
-                          <span className="text-sm text-slate-500">/100</span>
+                {result &&
+                  result.subjectMarks.map((sm, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"
+                    >
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-slate-900">
+                          {sm.subject.subjectName}
+                        </h3>
+                        <p className="text-sm text-slate-600">
+                          {sm.subject.subjectCode}
                         </p>
                       </div>
-                      <div className="text-center">
-                        <p className="text-xs text-slate-600 mb-1">Grade</p>
-                        <p className="text-xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded">
-                          {sm.grade}
-                        </p>
+                      <div className="flex items-center gap-8">
+                        <div className="text-center">
+                          <p className="text-xs text-slate-600 mb-1">Marks</p>
+                          <p className="text-xl font-bold text-slate-900">
+                            {sm.marks}
+                            <span className="text-sm text-slate-500">/100</span>
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-xs text-slate-600 mb-1">Grade</p>
+                          <p className="text-xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded">
+                            {sm.grade}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </Card>
 

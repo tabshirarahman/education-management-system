@@ -18,16 +18,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Manage Your Academic
-            <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              Journey Seamlessly
-            </span>
+            University Result Management System
+           
           </h1>
 
           <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
-            A modern Education Management System that streamlines student
-            information, results, and department management for universities
-            worldwide.
+            A modern University Result Management System that streamlines
+            student information, results, and department management for
+            universities worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
