@@ -60,8 +60,8 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 Email
               </h3>
-              <p className="text-slate-600">info@ems.com</p>
-              <p className="text-slate-600">support@ems.com</p>
+
+              <p className="text-slate-600">admin@universityresult.com</p>
             </Card>
 
             <Card className="p-8 text-center border border-slate-200 hover:shadow-lg transition-shadow">
@@ -69,8 +69,8 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 Phone
               </h3>
-              <p className="text-slate-600">+1 (234) 567-8900</p>
-              <p className="text-slate-600">+1 (234) 567-8901</p>
+
+              <p className="text-slate-600">017** - **** ***</p>
             </Card>
 
             <Card className="p-8 text-center border border-slate-200 hover:shadow-lg transition-shadow">
@@ -78,8 +78,9 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 Address
               </h3>
-              <p className="text-slate-600">123 University Ave</p>
-              <p className="text-slate-600">Tech City, TC 12345</p>
+              <p className="text-slate-600">
+                RTM-AKTU, East Shahi Eidgah, Sylhet
+              </p>
             </Card>
           </div>
 
@@ -180,7 +181,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 bg-slate-50">
+      {/* <section className="py-16 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-slate-900 text-center mb-12">
             Frequently Asked Questions
@@ -214,7 +215,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
