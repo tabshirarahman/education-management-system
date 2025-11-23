@@ -26,10 +26,11 @@ export default function AboutPage() {
                 </h2>
               </div>
               <p className="text-lg text-slate-600 leading-relaxed">
-                To revolutionize education management by providing institutions
-                with a modern, efficient, and user-friendly platform that
-                streamlines administrative processes and enhances the overall
-                educational experience for students and faculty.
+                To modernize result management for educational institutions by
+                providing a fast, accurate, and easy-to-use digital platform. We
+                aim to simplify student assessment, automate result processing,
+                and enhance transparency—helping institutions deliver a smoother
+                academic experience for both students and faculty.
               </p>
             </div>
 
@@ -41,10 +42,12 @@ export default function AboutPage() {
                 </h2>
               </div>
               <p className="text-lg text-slate-600 leading-relaxed">
-                To become the global leader in education management systems,
-                empowering universities worldwide to deliver quality education
-                through technology-driven solutions that are accessible,
-                reliable, and innovative.
+                To become a trusted leader in digital result management
+                solutions, empowering universities and colleges to adopt
+                reliable, secure, and technology-driven academic systems. We
+                envision a future where every institution can efficiently manage
+                results, maintain accuracy, and improve educational quality
+                through smart automation.
               </p>
             </div>
           </div>
@@ -55,10 +58,10 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-slate-900 text-center mb-12">
-            Why Choose EMS?
+            Why Choose URMS?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: CheckCircle,
@@ -66,21 +69,18 @@ export default function AboutPage() {
                 description:
                   "Intuitive interface designed for both administrators and students",
               },
-              {
-                icon: Users,
-                title: "Multi-User Support",
-                description:
-                  "Dedicated portals for students, admins, and faculty members",
-              },
+
               {
                 icon: Award,
-                title: "Accurate Results",
-                description: "Automatic grade calculation and CGPA computation",
+                title: "Accurate Result Processing",
+                description:
+                  "Automatic grade calculation, proper CGPA computation, and error-free result generation for every student.",
               },
               {
                 icon: Target,
-                title: "Reliable Support",
-                description: "24/7 customer support to help you succeed",
+                title: "Reliable",
+                description:
+                  "Bangladesh-based support team ensuring smooth and uninterrupted use for universities and institutions.",
               },
             ].map((feature, idx) => {
               const Icon = feature.icon;
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 year: 2020,
                 title: "Founded",
                 description:
-                  "EMS was established with a vision to modernize education management",
+                  "URMS was established with a vision to modernize education management",
               },
               {
                 year: 2021,

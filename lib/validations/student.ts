@@ -4,8 +4,9 @@ export const createStudentSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().regex(/^\d{11}$/, "Phone must be 11 digits"),
+  studentId: z.string().min(3, "Min ID 3 characters"),
   department: z.string().min(1, "Department is required"),
-})
+});
 
 export const updateStudentSchema = createStudentSchema.partial()
 

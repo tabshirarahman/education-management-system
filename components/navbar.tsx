@@ -20,8 +20,8 @@ interface NavbarProps {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-    const router = useRouter();
-        const { user, loading } = useUser();
+  const router = useRouter();
+  const { user, loading } = useUser();
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -41,10 +41,10 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
+            <div className="w-20 h-8 bg-linear-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">URMS</span>
             </div>
-            <span className="font-bold text-lg text-slate-900">EMS</span>
+          
           </Link>
 
           {/* Desktop Navigation */}

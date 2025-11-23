@@ -54,11 +54,13 @@ export default function LoginPage() {
     <div className="min-h-screen bg-linear-to-br from-slate-900 to-slate-800 flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">E</span>
+        <div className="flex items-center flex-col justify-center gap-2 mb-8">
+          <div className="w-20 h-10 bg-linear-to-br from-blue-600 to-blue-800 rounded-lg flex flex-row items-center justify-center">
+            <p className="text-white font-bold text-lg">URMS</p>
           </div>
-          <span className="font-bold text-xl text-slate-900">EMS</span>
+          <p className="font-bold text-xl text-slate-900">
+            University Result Management System
+          </p>
         </div>
 
         <h1 className="text-2xl font-bold text-slate-900 text-center mb-2">
@@ -117,8 +119,6 @@ export default function LoginPage() {
             {loading ? "Signing in..." : "Sign In"}
           </Button>
         </form>
-
-        
       </Card>
     </div>
   );

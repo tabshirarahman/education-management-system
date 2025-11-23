@@ -2,7 +2,7 @@ import type React from "react";
 import { AdminLayout } from "@/components/admin/layout";
 
 export const metadata = {
-  title: "Admin Dashboard - EMS",
+  title: "Admin Dashboard - URMS",
   description: "University Result Management System Admin Panel",
 };
 

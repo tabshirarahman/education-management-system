@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search, AlertCircle } from "lucide-react";
+import Link from "next/link";
 
 interface StudentResult {
   _id: string;
@@ -94,6 +95,9 @@ export default function Result() {
             University Result Management System
           </h1>
           <p className="text-slate-400">Search for your academic results</p>
+          <Button variant={"outline"} className="mt-4">
+            <Link href={"/"}>Back to Home</Link>
+          </Button>
         </div>
 
         {/* Search Card */}

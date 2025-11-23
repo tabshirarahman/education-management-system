@@ -61,21 +61,12 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = createStudentSchema.parse(body);
 
-    // Find last created student to increment ID
-    const lastStudent = await Student.findOne().sort({ createdAt: -1 });
 
-    let newIdNumber = 1;
-    if (lastStudent?.studentId) {
-      const lastNumber = parseInt(lastStudent.studentId.replace("std", ""), 10);
-      newIdNumber = lastNumber + 1;
-    }
 
-    const generatedStudentId = `std${String(newIdNumber).padStart(4, "0")}`;
 
-    const student = new Student({
-      ...validatedData,
-      studentId: generatedStudentId,
-    });
+
+
+    const student = new Student(validatedData);
 
     await student.save();
     await student.populate("department");

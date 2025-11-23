@@ -9,10 +9,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-linear-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">E</span>
+              <div className="w-20 h-8 bg-linear-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold">URMS</span>
               </div>
-              <span className="font-bold text-lg text-white">EMS</span>
             </div>
             <p className="text-sm">University Result Management System</p>
           </div>
@@ -89,7 +88,7 @@ export default function Footer() {
                   href="mailto:info@ems.com"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  info@ems.com
+                  admin@universityresult.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -98,12 +97,12 @@ export default function Footer() {
                   href="tel:+1234567890"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  +1 (234) 567-890
+                  017** - **** ***
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
-                <span>123 University Ave, City, Country</span>
+                <span> RTM-AKTU, East Shahi Eidgah, Sylhet</span>
               </li>
             </ul>
           </div>

@@ -63,9 +63,9 @@ export default function RegisterPage() {
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
           <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">E</span>
+            <span className="text-white font-bold text-lg">URMS</span>
           </div>
-          <span className="font-bold text-xl text-slate-900">EMS</span>
+          <span className="font-bold text-xl text-slate-900">URMS</span>
         </div>
 
         <h1 className="text-2xl font-bold text-slate-900 text-center mb-2">

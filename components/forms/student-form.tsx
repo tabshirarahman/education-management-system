@@ -113,6 +113,20 @@ export function StudentForm({ onSuccess, initialData, isEdit }: StudentFormProps
             <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
           )}
         </div>
+        <div>
+          <Label htmlFor="studentId">Student ID</Label>
+          <Input
+            id="studentId"
+            placeholder="std0007"
+            {...register("studentId")}
+            className={errors.studentId ? "border-red-500" : ""}
+          />
+          {errors.studentId && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.studentId.message}
+            </p>
+          )}
+        </div>
 
         <div>
           <Label htmlFor="department">Department</Label>
@@ -122,11 +136,12 @@ export function StudentForm({ onSuccess, initialData, isEdit }: StudentFormProps
             className="w-full px-3 py-2 border rounded-md"
           >
             <option value="">Select a department</option>
-            {departments && departments?.map((dept) => (
-              <option key={String(dept._id)} value={String(dept._id)}>
-                {dept.name}
-              </option>
-            ))}
+            {departments &&
+              departments?.map((dept) => (
+                <option key={String(dept._id)} value={String(dept._id)}>
+                  {dept.name}
+                </option>
+              ))}
           </select>
           {errors.department && (
             <p className="text-red-500 text-sm mt-1">
