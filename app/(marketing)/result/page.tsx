@@ -1,12 +1,13 @@
 "use client";
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { totalMarksByCredit } from "@/lib/utils/gradeCalculator";
 
 interface StudentResult {
   _id: string;
@@ -31,6 +32,7 @@ interface ResultData {
       _id: string;
       subjectName: string;
       subjectCode: string;
+      credits: number
     };
     marks: number;
     grade: string;
@@ -47,6 +49,7 @@ export default function Result() {
   const [error, setError] = useState("");
   const [searched, setSearched] = useState(false);
 
+
   // Fetch departments on mount
   useState(() => {
     fetch("/api/departments")
@@ -54,6 +57,10 @@ export default function Result() {
       .then((data) => setDepartments(data.data || []))
       .catch(() => console.error("Failed to fetch departments"));
   });
+
+
+  
+
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -201,36 +208,41 @@ export default function Result() {
               </h2>
               <div className="space-y-4">
                 {result &&
-                  result.subjectMarks.map((sm, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"
-                    >
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-slate-900">
-                          {sm.subject.subjectName}
-                        </h3>
-                        <p className="text-sm text-slate-600">
-                          {sm.subject.subjectCode}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-8">
-                        <div className="text-center">
-                          <p className="text-xs text-slate-600 mb-1">Marks</p>
-                          <p className="text-xl font-bold text-slate-900">
-                            {sm.marks}
-                            <span className="text-sm text-slate-500">/100</span>
+                  result.subjectMarks.map((sm, index) => {
+                    console.log(result.subjectMarks);
+                    return (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"
+                      >
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-slate-900">
+                            {sm.subject.subjectName}
+                          </h3>
+                          <p className="text-sm text-slate-600">
+                            {sm.subject.subjectCode}
                           </p>
                         </div>
-                        <div className="text-center">
-                          <p className="text-xs text-slate-600 mb-1">Grade</p>
-                          <p className="text-xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded">
-                            {sm.grade}
-                          </p>
+                        <div className="flex items-center gap-8">
+                          <div className="text-center">
+                            <p className="text-xs text-slate-600 mb-1">Marks</p>
+                            <p className="text-xl font-bold text-slate-900">
+                              {sm.marks}
+                              <span className="text-sm text-slate-500">
+                                /{totalMarksByCredit(sm.subject.credits)}
+                              </span>
+                            </p>
+                          </div>
+                          <div className="text-center">
+                            <p className="text-xs text-slate-600 mb-1">Grade</p>
+                            <p className="text-xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded">
+                              {sm.grade}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </div>
             </Card>
 
