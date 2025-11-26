@@ -1,27 +1,33 @@
-import { type NextRequest, NextResponse } from "next/server"
-import dbConnect from "@/lib/db/connect"
-import Result from "@/models/Result"
-import { updateResultSchema } from "@/lib/validations/result"
-import { calculateGrade, calculateCGPA } from "@/lib/utils/gradeCalculator"
-import type { ApiResponse, IResult } from "@/types"
+import { type NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/lib/db/connect";
+import Result from "@/models/Result";
+import { updateResultSchema } from "@/lib/validations/result";
+import { calculateGrade, calculateCGPA } from "@/lib/utils/gradeCalculator-old";
+import type { ApiResponse, IResult } from "@/types";
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
-    await dbConnect()
+    await dbConnect();
     const result = await Result.findById(params.id)
       .populate("student")
       .populate("department")
-      .populate("subjectMarks.subject")
+      .populate("subjectMarks.subject");
 
     if (!result) {
-      return NextResponse.json<ApiResponse<null>>({ success: false, message: "Result not found" }, { status: 404 })
+      return NextResponse.json<ApiResponse<null>>(
+        { success: false, message: "Result not found" },
+        { status: 404 }
+      );
     }
 
     return NextResponse.json<ApiResponse<IResult>>({
       success: true,
       message: "Result fetched successfully",
       data: result,
-    })
+    });
   } catch (error) {
     return NextResponse.json<ApiResponse<null>>(
       {
@@ -29,8 +35,8 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
         message: "Failed to fetch result",
         error: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 },
-    )
+      { status: 500 }
+    );
   }
 }
 
@@ -40,7 +46,7 @@ export async function PUT(
 ) {
   try {
     await dbConnect();
-        const { id } = await context.params;
+    const { id } = await context.params;
     const body = await request.json();
     const validatedData = updateResultSchema.parse(body);
 
@@ -96,7 +102,7 @@ export async function DELETE(
 ) {
   try {
     await dbConnect();
-        const { id } = await context.params;
+    const { id } = await context.params;
     const result = await Result.findByIdAndDelete(id);
 
     if (!result) {

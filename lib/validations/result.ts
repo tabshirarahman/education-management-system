@@ -2,8 +2,9 @@ import { z } from "zod"
 
 export const subjectMarkSchema = z.object({
   subject: z.string().min(1, "Subject is required"),
-  marks: z.number().min(0).max(100, "Marks must be between 0-100"),
-})
+  credit: z.number().min(1, "Credit is required"),
+  marks: z.number().min(0).max(200, "Marks must be between 0-100"),
+});
 
 export const createResultSchema = z.object({
   student: z.string().min(1, "Student is required"),

@@ -6,7 +6,8 @@
     grade: string
   }
 
-  export interface IResult extends Document {
+export interface IResult {
+  _id?: string;
     student: mongoose.Types.ObjectId
     department: mongoose.Types.ObjectId
     subjectMarks: ISubjectMark[]

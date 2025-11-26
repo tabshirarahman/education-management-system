@@ -21,6 +21,7 @@ export function ResultsTable({ onEdit, onDelete, onView, refreshTrigger }: Resul
     const fetchResults = async () => {
       try {
         const res = await fetch("/api/results")
+        
         const data = await res.json()
         setResults(data.data || [])
       } catch (error) {
@@ -75,7 +76,7 @@ export function ResultsTable({ onEdit, onDelete, onView, refreshTrigger }: Resul
                       <Button size="sm" variant="outline" onClick={() => onEdit(result)}>
                         <Edit2 className="w-4 h-4" />
                       </Button>
-                      <Button size="sm" variant="destructive" onClick={() => onDelete(result._id)}>
+                      <Button size="sm" variant="destructive" onClick={() => onDelete(result._id as string)}>
                         <Trash2 className="w-4 h-4" />
                       </Button>
                     </td>

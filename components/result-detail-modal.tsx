@@ -3,6 +3,7 @@
 import type { IResult } from "@/types"
 import { Card } from "@/components/ui/card"
 import { X } from "lucide-react"
+import { totalMarksByCredit } from "@/lib/utils/gradeCalculator"
 
 interface ResultDetailModalProps {
   result: IResult | null
@@ -51,23 +52,34 @@ export function ResultDetailModal({ result, onClose }: ResultDetailModalProps) {
               {result.subjectMarks?.map((sm, index) => {
                 const subject = sm.subject as any
                 return (
-                  <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between p-3 border rounded-lg"
+                  >
                     <div>
-                      <p className="font-medium text-slate-900">{subject?.subjectName}</p>
-                      <p className="text-sm text-slate-600">{subject?.subjectCode}</p>
+                      <p className="font-medium text-slate-900">
+                        {subject?.subjectName}
+                      </p>
+                      <p className="text-sm text-slate-600">
+                        {subject?.subjectCode}
+                      </p>
                     </div>
                     <div className="flex items-center gap-8">
                       <div className="text-center">
                         <p className="text-sm text-slate-600">Marks</p>
-                        <p className="text-lg font-semibold text-slate-900">{sm.marks}/100</p>
+                        <p className="text-lg font-semibold text-slate-900">
+                          {sm.marks}/{totalMarksByCredit(subject.credits)}
+                        </p>
                       </div>
                       <div className="text-center">
                         <p className="text-sm text-slate-600">Grade</p>
-                        <p className="text-lg font-semibold text-blue-600">{sm.grade}</p>
+                        <p className="text-lg font-semibold text-blue-600">
+                          {sm.grade}
+                        </p>
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
