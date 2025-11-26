@@ -3,7 +3,7 @@ import dbConnect from "@/lib/db/connect"
 import Student from "@/models/Student"
 import { updateStudentSchema } from "@/lib/validations/student"
 import type { ApiResponse, IStudent } from "@/types"
-
+import "@/models/Department"
 export async function GET(
   request: NextRequest,
   context: { params: Promise<{ id: string }> }

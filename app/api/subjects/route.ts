@@ -3,6 +3,7 @@ import dbConnect from "@/lib/db/connect"
 import Subject from "@/models/Subject"
 import { createSubjectSchema } from "@/lib/validations/subject"
 import type { ApiResponse, ISubject } from "@/types"
+import "@/models/Department";
 
 export async function GET(request: NextRequest) {
   try {

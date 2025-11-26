@@ -4,6 +4,8 @@ import Result from "@/models/Result"
 import Student from "@/models/Student"
 import "@/models/Subject";
 import type { ApiResponse, IResult } from "@/types"
+import "@/models/Department";
+
 
 export async function POST(request: NextRequest) {
   try {

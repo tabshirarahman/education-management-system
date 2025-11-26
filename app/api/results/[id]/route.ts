@@ -4,6 +4,9 @@ import Result from "@/models/Result";
 import { updateResultSchema } from "@/lib/validations/result";
 import { calculateGrade, calculateCGPA } from "@/lib/utils/gradeCalculator-old";
 import type { ApiResponse, IResult } from "@/types";
+import "@/models/Student";
+import "@/models/Department";
+import "@/models/Subject";
 
 export async function GET(
   request: NextRequest,
