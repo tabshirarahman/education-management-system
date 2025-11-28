@@ -255,7 +255,7 @@ export function ResultForm({
 
                     <div className="w-24">
                       <Label htmlFor={`marks-${index}`} className="text-xs">
-                        Marks (0-200)
+                        Marks (0-100)
                       </Label>
                       <Input
                         id={`marks-${index}`}
