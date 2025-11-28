@@ -3,7 +3,7 @@
 import type { IResult } from "@/types"
 import { Card } from "@/components/ui/card"
 import { X } from "lucide-react"
-import { totalMarksByCredit } from "@/lib/utils/gradeCalculator"
+
 
 interface ResultDetailModalProps {
   result: IResult | null
@@ -68,7 +68,7 @@ export function ResultDetailModal({ result, onClose }: ResultDetailModalProps) {
                       <div className="text-center">
                         <p className="text-sm text-slate-600">Marks</p>
                         <p className="text-lg font-semibold text-slate-900">
-                          {sm.marks}/{totalMarksByCredit(subject.credits)}
+                          {sm.marks}/100
                         </p>
                       </div>
                       <div className="text-center">

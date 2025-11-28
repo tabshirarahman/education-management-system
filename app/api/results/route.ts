@@ -2,12 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/db/connect";
 import Result, { IResult } from "@/models/Result";
 import { createResultSchema } from "@/lib/validations/result";
-import {
-  calculateGradeFromPercentage,
-  calculateCGPA,
-  gradeToPoint,
-  totalMarksByCredit,
-} from "@/lib/utils/gradeCalculator";
+import { marksToPoint, calculateCGPA } from "@/lib/utils/gradeCalculator";
 import { ApiResponse } from "@/types";
 import "@/models/Student";
 import "@/models/Department";
@@ -20,28 +15,23 @@ export async function POST(request: NextRequest) {
 
     const validatedData = createResultSchema.parse(body);
 
-    // Process subjects
+    // Process subjects (Screenshot Logic)
     const subjectMarks = validatedData.subjectMarks.map((sm) => {
-      const totalMarks = totalMarksByCredit(sm.credit);
-      const percentage = (sm.marks / totalMarks) * 100;
-
-      const grade = calculateGradeFromPercentage(percentage);
-      const gpa = gradeToPoint(grade);
-      const subjectPoint = gpa * sm.credit;
+      const gradePoint = marksToPoint(sm.marks);
 
       return {
         ...sm,
-        totalMarks,
-        percentage,
-        grade,
-        gpa,
-        subjectPoint,
+        grade: gradePoint,
+        subjectPoint: Number((gradePoint * sm.credit).toFixed(2)), // GPA × Credit
       };
     });
 
-    // Final CGPA
+    // Final CGPA (Screenshot Logic)
     const totalCGPA = calculateCGPA(
-      subjectMarks.map((s) => ({ marks: s.marks, credits: s.credit }))
+      subjectMarks.map((s) => ({
+        marks: s.marks,
+        credits: s.credit,
+      }))
     );
 
     const result = new Result({

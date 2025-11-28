@@ -1,13 +1,13 @@
 "use client";
 import type React from "react";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search, AlertCircle } from "lucide-react";
 import Link from "next/link";
-import { totalMarksByCredit } from "@/lib/utils/gradeCalculator";
+
 
 interface StudentResult {
   _id: string;
@@ -36,6 +36,7 @@ interface ResultData {
     };
     marks: number;
     grade: string;
+   
   }>;
   totalCGPA: number;
 }
@@ -229,8 +230,16 @@ export default function Result() {
                             <p className="text-xl font-bold text-slate-900">
                               {sm.marks}
                               <span className="text-sm text-slate-500">
-                                /{totalMarksByCredit(sm.subject.credits)}
+                                /100
                               </span>
+                            </p>
+                          </div>
+                          <div className="text-center">
+                            <p className="text-xs text-slate-600 mb-1">
+                              Credits
+                            </p>
+                            <p className="text-xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded">
+                              {sm.subject.credits}
                             </p>
                           </div>
                           <div className="text-center">
